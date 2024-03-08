@@ -1,0 +1,33 @@
+package atm_machine;
+
+public class UserAccount {
+
+    private float balance;
+
+    public UserAccount(float balance) {
+        this.balance = balance;
+    }
+
+
+    public boolean withdraw (float amount){
+      if ((amount>0)&&(amount<this.balance)){
+          this.balance-=amount;
+          return true;}
+      else return false;
+
+    }
+
+    public boolean deposit(float amount){
+        if (amount>0)
+        {this.balance+=amount;
+            return true;}
+        else return false;
+    }
+
+    public float checkBalance ()
+    {
+        return this.balance;
+    }
+
+}
+

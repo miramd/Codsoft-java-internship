@@ -1,0 +1,63 @@
+ackage Grades_Calculator;
+
+import java.util.Scanner;
+
+public class Marks {
+    Scanner scanner = new Scanner(System.in);
+    float totalGrades (int n){
+
+        float s = 0;
+
+        for (int i=1; i<=n; i++){
+
+            System.out.println("Give the grade for course " + i);
+
+            s+=scanner.nextFloat();
+            scanner.nextLine();
+        }
+
+        return s;
+    }
+
+    float cAvg (float t , int n){
+
+        return t /n;
+
+    }
+
+    void grade ( float f)
+    {
+
+
+        if (f>=90){
+            System.out.println("Grade : A");
+        }
+        else {
+            if (f>=80) System.out.println("Grade : B");
+            else
+                if (f>=70)  System.out.println("Grade : C");
+                else  System.out.println("Grade : D");
+        }
+    }
+
+    public static void main (String []args) throws Exception {
+
+        Marks m = new Marks();
+
+        System.out.println("Number of grades :");
+        int a = m.scanner.nextInt();
+        if (a<=0) throw new Exception("Number of Grades cannot be negative");
+
+        float t = m.totalGrades(a);
+        System.out.println("Your total marks :"+t );
+
+        float fAvg = m.cAvg(t,a);
+        System.out.println("Your average is :"+ fAvg);
+
+        m.grade( fAvg);
+
+        m.scanner.close();
+
+    }
+
+}
